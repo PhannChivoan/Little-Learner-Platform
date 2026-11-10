@@ -1,0 +1,36 @@
+.wl{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:linear-gradient(180deg,#bfe6ff 0%,#e9f7ff 55%,#fff 100%);overflow:hidden;transition:opacity .6s ease,visibility .6s ease;font-family:"Fredoka","Noto Sans Khmer",system-ui,sans-serif;color:#2b3a67;text-align:center;padding:20px}
+.wl.out{opacity:0;visibility:hidden;pointer-events:none}
+.wl .snow{position:absolute;inset:0;pointer-events:none}
+.wl .snow i{position:absolute;top:-24px;font-style:normal;color:#fff;text-shadow:0 0 6px #9bd3f5;animation:wl-fall linear infinite}
+@keyframes wl-fall{to{transform:translateY(110vh) rotate(360deg)}}
+.wl .ground{position:absolute;left:-10%;right:-10%;bottom:-60px;height:180px;background:#fff;border-radius:50% 50% 0 0;box-shadow:0 -8px 30px rgba(120,180,230,.35)}
+.wl .stage{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:12px;animation:wl-pop .7s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes wl-pop{from{transform:scale(.6) translateY(30px);opacity:0}to{transform:none;opacity:1}}
+.wl h1{margin:0;font-size:clamp(26px,5vw,40px);animation:wl-rise .8s .3s ease both}
+.wl p{margin:0;font-size:clamp(15px,2.4vw,19px);color:#5a6a98;animation:wl-rise .8s .5s ease both}
+@keyframes wl-rise{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.wl .bear{width:min(260px,60vw);height:auto;animation:wl-float 2.6s ease-in-out infinite;overflow:visible}
+@keyframes wl-float{50%{transform:translateY(-10px)}}
+.wl .paw{transform-box:fill-box;transform-origin:50% 100%;animation:wl-wave 1s ease-in-out infinite}
+@keyframes wl-wave{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(24deg)}}
+.wl .eye{transform-box:fill-box;transform-origin:center;animation:wl-blink 3.4s infinite}
+@keyframes wl-blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+.wl .ear{transform-box:fill-box;transform-origin:center bottom;animation:wl-ear 2.2s ease-in-out infinite}
+@keyframes wl-ear{50%{transform:rotate(-6deg)}}
+.wl .go{margin-top:6px;border:0;cursor:pointer;font:inherit;font-weight:600;font-size:18px;color:#fff;background:#7c5cff;padding:12px 28px;border-radius:999px;box-shadow:0 6px 0 #5a3fd1;animation:wl-rise .8s .8s ease both,wl-bounce 1.6s 1.6s ease-in-out infinite}
+.wl .go:active{transform:translateY(4px);box-shadow:0 2px 0 #5a3fd1}
+@keyframes wl-bounce{50%{transform:translateY(-6px)}}
+.wl .track{position:relative;z-index:1;width:min(300px,70vw);height:58px}
+.wl .bar{position:absolute;left:0;right:0;bottom:6px;height:14px;border-radius:999px;background:rgba(255,255,255,.85);box-shadow:inset 0 0 0 3px #fff,0 2px 8px rgba(100,160,220,.3);overflow:hidden}
+.wl .bar b{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#ff8a2b,#ff5fa2,#7c5cff);animation:wl-fill var(--d,3200ms) ease-out forwards}
+@keyframes wl-fill{to{width:100%}}
+.wl .runner{position:absolute;bottom:14px;left:0;font-size:38px;line-height:1;animation:wl-run var(--d,3200ms) ease-out forwards,wl-hop .32s ease-in-out infinite}
+@keyframes wl-run{from{left:0}to{left:calc(100% - 44px)}}
+@keyframes wl-hop{50%{margin-bottom:12px}}
+.wl .dots span{display:inline-block;animation:wl-dot 1s infinite}
+.wl .dots span:nth-child(2){animation-delay:.15s}
+.wl .dots span:nth-child(3){animation-delay:.3s}
+@keyframes wl-dot{50%{transform:translateY(-6px)}}
+@media (prefers-reduced-motion:reduce){.wl *{animation-duration:.01s!important;animation-iteration-count:1!important}}
+
+.wl h1.load-title{color:#7a4a21}
