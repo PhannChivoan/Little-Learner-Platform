@@ -1,7 +1,7 @@
 "use client";
 
 const CORE = ["lang-km","i18n","lib","api","app"];
-const SHARED = ["play"];
+const SHARED = ["play", "live"];
 
 type Win = Window & { __caCore?: Promise<void>; __caNav?: (to: string) => void; S?: Record<string, unknown> };
 
@@ -38,7 +38,7 @@ export async function showScreen(id: string) {
   if (id) {
     const area = id.split("/")[0];
     if (SHARED.includes(area)) await loadOnce("/js/screens/" + area + "/_shared.js");
-    if (area === "play") await loadOnce("/js/screens/play/_games.js");
+    if (area === "play" || area === "live") await loadOnce("/js/screens/play/_games.js");
     await loadOnce("/js/screens/" + id + ".js");
   }
   (window as unknown as { route: () => void }).route();

@@ -21,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="stylesheet" href="/css/welcome.css" />
         <link rel="stylesheet" href="/css/home.css" />
         <link rel="stylesheet" href="/css/game.css" />
+        <link rel="stylesheet" href="/css/live.css" />
       </head>
       <body>
         <Welcome title="Hi friend! Welcome to Critter Academy!" line="Learn and play with your animal friends." />

@@ -57,7 +57,7 @@ S["home/index"] = {
       </section>
       <section class="lp-sec">
         <div class="rv"><span class="pill">Explore the platform</span><h2>Five areas, one adventure</h2></div>
-        <div class="gg">${APPS.slice(1).map((a, i) => `<section class="card grp rv" style="--c:${a.c};--dl:${i * 0.08}s"><h3><span class="gi">${a.icon}</span>${a.label}</h3><p class="muted small">${a.desc} · ${a.nav.length} screens</p><div class="lk">${a.nav.map((n) => `<button data-go="${a.id}/${n[0]}">${n[2]} ${n[1]}</button>`).join("")}</div></section>`).join("")}</div>
+        <div class="gg">${APPS.slice(1).map((a, i) => `<section class="card grp rv" style="--c:${a.c};--dl:${i * 0.08}s"><h3><span class="gi">${a.icon}</span>${a.label}</h3><p class="muted small">${a.desc} · ${a.nav.length} screens</p><div class="lk">${a.nav.filter((n) => n[3] !== "hide").map((n) => `<button data-go="${a.id}/${n[0]}">${n[2]} ${n[1]}</button>`).join("")}</div></section>`).join("")}</div>
       </section>
       <section class="lp-cta rv">
         <div class="peek"><span>🐻</span><span>🐰</span><span>🦊</span></div>
